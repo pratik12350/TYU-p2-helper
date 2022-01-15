@@ -7,12 +7,15 @@ module.exports = {
   description: "",
   run: async(client, message, args) => {
 
-if(!message.member.roles.cache.get("839794402674343946")) return message.reply("HAHAHA You need staff role to use this command!")
+let role = message.member.roles.cache.get("931863689882132500") || message.member.roles.cache.get("931863157633347664")
+
+if(!role) return message.reply("HAHAHA You need staff role to use this command!")
+    
     
 const tagName = args.join(" ");
 // const tagRes = args.slice(1).join(" ");
 
- if(!tagName) return message.reply("Provide a tag name dumbass")
+ if(!tagName) return message.reply("Provide a tag name bruh")
 
 const data = await Schema.findOne({
   Guild: message.guild.id,
