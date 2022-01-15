@@ -14,20 +14,20 @@ if(!role) return message.reply("HAHAHA You need staff role to use this command!"
 const tagName = args[0]
 const tagRes = args.slice(1).join(" ");
 
-if(!tagName) return message.channel.send(":x: Provide Tag Name!")
-if(!tagRes) return message.channel.send(":x: Provide Tag Response!")
+if(!tagName) return message.reply(":x: Provide Tag Name!")
+if(!tagRes) return message.reply(":x: Provide Tag Response!")
     
-if(tagName.length > 500) return message.channel.send("Woah, Tag name should be under 500 Characters!")
-if(tagRes.length > 500) return message.channel.send("Woah, Tag response should be under 500 Characters!")
+if(tagName.length > 500) return message.reply("Woah, Tag name should be under 500 Characters!")
+if(tagRes.length > 500) return message.reply("Woah, Tag response should be under 500 Characters!")
 
 const data = await Schema.findOne({
   Guild: message.guild.id,
   Tag: tagName
 })
 
-console.log(data)
+// console.log(data)
   
-    if(data) return message.channel.send("This Command Already Exists!")
+    if(data) return message.reply("This tag Already Exists!")
 
     const newData = new Schema({
       Guild: message.guild.id,
@@ -41,6 +41,6 @@ console.log(data)
     .setDescription("Done! New tag created!")
     .setColor(client.config.embedColor)
 
-message.channel.send({ embeds: [doneEmbed] })
+message.reply({ embeds: [doneEmbed] })
   }
 }

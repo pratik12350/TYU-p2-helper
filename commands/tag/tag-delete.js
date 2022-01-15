@@ -12,20 +12,20 @@ if(!message.member.roles.cache.get("839794402674343946")) return message.reply("
 const tagName = args.join(" ");
 // const tagRes = args.slice(1).join(" ");
 
- if(!tagName) return message.channel.send("Provide a tag name dumbass")
+ if(!tagName) return message.reply("Provide a tag name dumbass")
 
 const data = await Schema.findOne({
   Guild: message.guild.id,
   Tag: tagName
 })
 
-if(!data) return message.channel.send("That Command Doesn't Exists you sussy baka")
+if(!data) return message.reply("That Command Doesn't Exists you sussy baka")
     
 await Schema.findOneAndDelete({
   Guild: message.guild.id,
   Tag: tagName
 })
 
-    message.channel.send(`Successfully Deleted **${tagName}**`)
+    message.reply(`Successfully Deleted **${tagName}**`)
  }
 }

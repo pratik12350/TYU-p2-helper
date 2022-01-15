@@ -14,7 +14,7 @@ const embed = new MessageEmbed()
     .addField("TAG SYSTEM [3]", ">>> `tag-create <name> <response>` : **Create Custom Tags**\n`tag-delete <name>` : **Delete a tag**\n`tag-help` : **Learn how to use tags!**")
     .setThumbnail("https://cdn.discordapp.com/emojis/844156428309495809.png")
 
-message.channel.send({ embeds: [embed] })
+message.reply({ embeds: [embed] })
 
   }
 }

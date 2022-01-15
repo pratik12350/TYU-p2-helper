@@ -12,7 +12,7 @@ module.exports = {
     run: async (client, message, args) => {
      //   message.channel.send(`${client.ws.ping} ws ping`);
 
-      const msg = await message.channel.send("Pinging...");
+      const msg = await message.reply("Pinging...");
 
       msg.edit(`🏓 Pong!\nWebstock Connection: ${client.ws.ping} ms\nMessage Response Time: ${msg.createdTimestamp - message.createdTimestamp} ms`)
       

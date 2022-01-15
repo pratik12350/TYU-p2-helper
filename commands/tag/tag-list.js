@@ -38,5 +38,5 @@ const embed = new MessageEmbed()
 
     .setColor("BLURPLE")
 
-  message.channel.send({ embeds: [embed] })}
+  message.reply({ embeds: [embed] })}
 }
