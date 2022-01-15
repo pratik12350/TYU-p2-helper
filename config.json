@@ -2,5 +2,5 @@
     "token": "",
     "prefix": "!!",
     "mongooseConnectionString": "",
-    "embedColor": "#2F3136"
+    "embedColor": "WHITE"
 }
