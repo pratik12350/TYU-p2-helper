@@ -9,7 +9,8 @@ module.exports = {
   run: async (client, message, args) => {
     const owners = [
 
-      "742228129107410976"
+      "742228129107410976",
+      "681121060711956490"
     ]
     if(!owners.includes(message.author.id)) return;
          const code = args.join(" ");
