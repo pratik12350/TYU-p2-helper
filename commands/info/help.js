@@ -8,7 +8,7 @@ module.exports = {
 
 const embed = new MessageEmbed()
     .setTitle("Stop It, Get Some Help!")
-    .setDescription("```\nPrefix: !!\nParameters:\n<> - Required\n[] - Optional```")
+    .setDescription("```\nPrefix: y?\nParameters:\n<> - Required\n[] - Optional```")
     .setColor(client.config.embedColor)
     .addField("INFO [2]", ">>> `ping` : **Shows Bot Latency**\n`help` : **Stop It, Get some help!**")
     .addField("TAG SYSTEM [3]", ">>> `tag-create <name> <response>` : **Create Custom Tags**\n`tag-delete <name>` : **Delete a tag**\n`tag-help` : **Learn how to use tags!**")

@@ -33,7 +33,7 @@ message.channel.send({ embeds: [embed] })
 
 const embed = new MessageEmbed()
     .setTitle("How To use Tags??1?")
-    .setDescription("There are 3 Category of tags.\n\n> stats\n\n> moveset\n\n> info\n\nUse command in `!!<pokemon>-<category>` this syntax!")
+    .setDescription("There are 3 Category of tags.\n\n> stats\n\n> moveset\n\n> info\n\nUse command in `y?<pokemon>-<category>` this syntax!")
   .setThumbnail("https://cdn.discordapp.com/emojis/844156428309495809.png")
 
     .setColor("BLURPLE")

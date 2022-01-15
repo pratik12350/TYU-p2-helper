@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
   console.log('webserver ready!!!!')
 })
-const { Client, Collection } = require("discord.js")
+const { Client, Collection, MessageEmbed } = require("discord.js")
 
 const client = new Client({
     intents: 32767,
@@ -22,5 +22,17 @@ client.config = require("./config.json");
 
 // Initializing the project
 require("./handler")(client);
+
+client.on('messageCreate', (message) => {
+  if(message.author.bot) return;
+  if(message.content === `<@${client.user.id}>`) {
+    let embed = new MessageEmbed()
+    .setTitle("HELLO!")
+    .setDescription(`<:Yveltal:841132745278226442> Hello ${message.author}!\n<:Yveltal:841132745278226442> Im Poketwo Helper For ${message.guild.name}\n<:Yveltal:841132745278226442> Prefix: \`y?\``)
+
+    message.channel.send({ embeds: [embed] })
+  }
+  
+})
 
 client.login(process.env.TOKEN);
