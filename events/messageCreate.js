@@ -1,5 +1,6 @@
 const client = require("../index");
 const Schema = require('../models/tagSchema');
+const { MessageEmbed } = require('discord.js'); 
 
 client.on("messageCreate", async (message) => {
   if (
@@ -17,7 +18,12 @@ client.on("messageCreate", async (message) => {
 const data = await Schema.findOne({ Guild: message.guild.id, Tag: cmd})
 
 if (data) {
-  message.channel.send(`${data.Response}`)
+  let embed = new MessageEmbed()
+//  .setTitle(null)
+  .setDescription(data.Response)
+  .setColor("BLACK")
+  .setFooter("❤️")
+  message.channel.send({ embeds: [embed] })
 } // else return;
   
   const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases ?.includes(cmd.toLowerCase()));

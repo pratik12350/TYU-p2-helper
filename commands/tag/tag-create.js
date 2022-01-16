@@ -18,7 +18,7 @@ if(!tagName) return message.reply(":x: Provide Tag Name!")
 if(!tagRes) return message.reply(":x: Provide Tag Response!")
     
 if(tagName.length > 500) return message.reply("Woah, Tag name should be under 500 Characters!")
-if(tagRes.length > 500) return message.reply("Woah, Tag response should be under 500 Characters!")
+if(tagRes.length > 1500) return message.reply("Woah, Tag response should be under 500 Characters!")
 
 const data = await Schema.findOne({
   Guild: message.guild.id,
